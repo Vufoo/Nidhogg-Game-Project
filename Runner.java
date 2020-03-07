@@ -141,13 +141,28 @@ public class Runner {
 
     public static void controls(){
 
-        for (int r = 0; true; r++) {
-            StdDraw.textLeft(50,50, "Player");
+        while(true) {
 
-            if(StdDraw.isKeyPressed(KeyEvent.VK_ESCAPE)){//escape button
-                StdDraw.clear();
-                splashScreen();
+            StdDraw.text(25,70, "Player 1 Controls");
+            StdDraw.text(25, 60, "Move Right: D");
+            StdDraw.text(25, 50, "Move Left: A");
+            StdDraw.text(25, 40, "Attack: 1");
+            StdDraw.text(25, 30, "Jump: 2");
+            StdDraw.text(75,70, "Player 2 Controls");
+            StdDraw.text(75, 60, "Move Right: Right Arrow");
+            StdDraw.text(75, 50, "Move Left: Left Arrow");
+            StdDraw.text(75, 40, "Attack: N");
+            StdDraw.text(75, 30, "Jump: M");
+            StdDraw.text(50, 15, "Exit: Escape");
+
+
+            if (StdDraw.hasNextKeyTyped()) {
+                if(StdDraw.isKeyPressed(KeyEvent.VK_ESCAPE)) {//escape button
+                    StdDraw.clear();
+                    splashScreen();
+                }
             }
+            StdDraw.show();
         }
     }
 
