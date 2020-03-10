@@ -7,12 +7,8 @@ public class Runner {
 
     private boolean selected;
 
-
-
     public static void main(String[] args) {
-        ;
         new Runner();
-
     }
 
 
@@ -37,12 +33,14 @@ public class Runner {
         int option = 0;
 
         for (int r = 0; true; r++) {
+            StdDraw.setPenColor(Color.BLACK);
+            StdDraw.text(50,70, "NIDHOGG");
             StdDraw.setPenColor(Color.RED);
-            StdDraw.text(50,60, "1. Single Player");
+            StdDraw.text(50,50, "1. Single Player");
             StdDraw.setPenColor(Color.BLUE);
-            StdDraw.text(50,50, "2. Two Player");
+            StdDraw.text(50,40, "2. Two Player");
             StdDraw.setPenColor(Color.GREEN);
-            StdDraw.text(50,40, "3. Controls");
+            StdDraw.text(50,30, "3. Controls");
             StdDraw.show();
             if (StdDraw.isKeyPressed(KeyEvent.VK_1)) {
                 option = 1;
@@ -72,11 +70,10 @@ public class Runner {
 
     public static void singlePlayer(){ //single
 
-        Player player1 = new Player(40,10, 1,1, Color.BLUE,1);
-
+        Player player1 = new Player(40,10, 1,1, Color.BLUE,1, true);
 
         while(true){
-            StdDraw.picture(50,50,"pixil-frame-0.png");//firstscreen
+            StdDraw.picture(50,50,"Background.png");//firstscreen
             player1.draw();
 
             if (StdDraw.hasNextKeyTyped()) {//controls
@@ -101,12 +98,11 @@ public class Runner {
 
     public static void twoPlayer(){
 
-        Player player1 = new Player(40,10, 1,5, Color.BLUE,1);
-        Player player2 = new Player(60,10,1,5, Color.RED,2);
-
+        Player player1 = new Player(40,10, 1,5, Color.BLUE,1, true);
+        Player player2 = new Player(60,10,1,5, Color.RED,2, false);
 
         while(true){
-            StdDraw.picture(50,50,"pixil-frame-0.png");//firstscreen
+            StdDraw.picture(50,50,"Background.png");//firstscreen
             player1.draw();
             player2.draw();
 
@@ -174,5 +170,3 @@ public class Runner {
 
     }
 }
-
-
