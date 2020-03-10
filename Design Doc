@@ -1,0 +1,58 @@
+Breakdown of Game Components:
+Player 1
+Position
+Velocity
+Slide/crouch
+Jump
+Health
+Wall climb/stick
+Punch
+
+
+
+Background
+
+Player 2
+(same as player 1)
+
+Sword
+Position 
+Velocity
+Bounce
+Angle (held by player)
+
+Countdown
+Position
+
+Player Controls:
+Lateral Movement: Left and Right | A and D
+Duck: Down | S
+Jump: G | space
+Roll: Down | S while moving
+Crawl: Move left or right  | A and D while ducking
+Get Up: Left or Right  | A and D while knocked down
+Raise Sabre: Up | W
+Lower Sabre: Down | S
+Pick Up Sabre: Down | S
+Lunge: F | NumPad 1
+Prepare Sabre for Throwing: Hold Up | W beyond the highest sabre position
+Throw Sabre: F | NumPad 1while sabre is held aloft
+Instantly Throw Sabre: W and F | Up and NumPad1  simultaneously
+Dive-Kick: F | NumPad 1while in the air
+Trip: F | Numpad1 while crouched
+Punch: F | Numpad1 while disarmed
+Snap Neck: F | Numpad1 while opponent is downed
+En Garde Stance: Run left  | A and then hold right | D, while continuing to hold left | A. Or vice versa.
+
+
+
+Classes & Necessities:
+
+Main:
+
+Fight()
+Int ox; //player one x position
+Int oy; //player one y position
+Int tx; //player one x position
+Int ty; //player one y position
+
