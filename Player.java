@@ -3,6 +3,7 @@ import java.awt.*;
 public class Player {
     double x, y, velx, vely;
     int playernum;
+    boolean direction;
     Color color;
 
     public Player(){
@@ -12,15 +13,17 @@ public class Player {
         vely = 0;
         color = Color.WHITE;
         playernum = 0;
+        direction = false;
     }
 
-    public Player(double x, double y, double velx, double vely, Color color, int num){
+    public Player(double x, double y, double velx, double vely, Color color, int num, boolean direction){
         this.x=x;
         this.y=y;
         this.velx = velx;
         this.vely = vely;
         this.color = color;
         playernum = num;
+        this.direction = direction;
     }
 
     public void draw(){  //draws character
@@ -31,12 +34,6 @@ public class Player {
         if(playernum==2){
             StdDraw.picture(x,y, "Player2.png");
         }
-
-
-
-        //StdDraw.setPenColor(color);
-        //StdDraw.filledRectangle(x,y,2,5);
-
 
     }
     public void duck(){} //ducking mechanic
@@ -73,6 +70,11 @@ public class Player {
 
 
 
+
+
+
+
+}
 
 
 
