@@ -1,9 +1,9 @@
-import java.awt.*;
-
 public class Sword extends GameObject{
-    int position;
+    int position, player;
     double playernum;
     boolean direction;
+    Hitbox hitboxS= new Hitbox(getX(), getY(), 5.7,1.5);
+
 
     public Sword(){
         super();
@@ -20,54 +20,63 @@ public class Sword extends GameObject{
     }
 
     public void draw(){
+
         if(playernum == 20){
+            player = 1;
 
             if(position == 0){
-                StdDraw.picture(x+10, y-5, "sword1.png");
-                StdDraw.circle(x+15, y-5, 1);
+                setY(y-5);
+                hitboxS.setY(y);
+                StdDraw.picture(x, y, "sword1.png");
+                //StdDraw.rectangle(x+12, y-5, 4,1);
+
+
             }
             if(position == 1){
-                StdDraw.picture(x+10, y, "sword1.png");
-                StdDraw.circle(x+15, y, 1);
+                StdDraw.picture(x, y, "sword1.png");
+                //StdDraw.rectangle(x+12, y, 4,1);
+
             }
             if(position == 2){
-                StdDraw.picture(x+10, y+5, "sword1.png");
-                StdDraw.circle(x+15, y+5, 1);
+                setY(y+5);
+                hitboxS.setY(y);
+                StdDraw.picture(x, y, "sword1.png");
+                //StdDraw.rectangle(x+12, y+5, 4,1);
+
             }
-
         }
-
         if(playernum == 80) {
+
+            player = 2;
             if(position == 0){
-                StdDraw.picture(x-10, y-5, "sword2.png");
-                StdDraw.circle(x-15, y-5, 1);
+                setY(y-5);
+                hitboxS.setY(y);
+                StdDraw.picture(x, y, "sword2.png");
+                //StdDraw.rectangle(x-12, y-5, 4,1);
             }
             if(position == 1){
-                StdDraw.picture(x-10, y, "sword2.png");
-                StdDraw.circle(x-15, y, 1);
+                StdDraw.picture(x, y, "sword2.png");
+                //StdDraw.rectangle(x-12, y, 4,1);
             }
             if(position == 2){
-                StdDraw.picture(x-10, y+5, "sword2.png");
-                StdDraw.circle(x-15, y+5, 1);
+                setY(y+5);
+                hitboxS.setY(y);
+                StdDraw.picture(x, y, "sword2.png");
+                //StdDraw.rectangle(x-12, y+5, 4,1);
             }
 
         }
+        hitboxS.draw();
 
     }
 
-    public void hitBox(){
+    public void moveUp(){ position += 1; y+=5; hitboxS.moveUp();}
 
-    }
+    public void moveDown(){ position -= 1; y-=5; hitboxS.moveDown();}
 
-    public void moveUp(){ position += 1; y+=5; }
+    public void moveLeft(double velx){ x -= velx; hitboxS.moveLeft(velx);}
 
-    public void moveDown(){ position -= 1; y-=5;}
-
-    public void moveLeft(double velx){ x -= velx; }
-
-    public void moveRight(double velx){
-        x += velx;
-    }
+    public void moveRight(double velx){ x += velx; hitboxS.moveRight(velx);}
 
     public int getPosition(){
         return position;
@@ -81,22 +90,17 @@ public class Sword extends GameObject{
         return y;
     }
 
-    public void setY(double y){
-        this.y = y;
-    }
+    public void setY(double y){ this.y = y; hitboxS.setY(y);}
 
     public double getX(){ return x; }
 
-    public void setX(){ this.x = x; }
+    public void setX(double x){ this.x = x; }
 
     public boolean getDirection(){
         return direction;
     }
 
-    public void parry(Sword sword){ //sword collision
-
-    }
-    public void collision(){  //player collision
-
+    public Hitbox getHitBoxS(){
+        return hitboxS;
     }
 }
