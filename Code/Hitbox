@@ -1,0 +1,59 @@
+public class Hitbox {
+    double x, y, width, height;
+
+    public Hitbox() {
+        x = 0;
+        y = 0;
+        width = 0;
+        height = 0;
+    }
+    public Hitbox(double x, double y, double width, double height) {
+        this.x = x;
+        this.y = y;
+        this.width = width;
+        this.height = height;
+    }
+    public void draw(){
+
+        StdDraw.rectangle(x,y,width,height);
+    }
+
+    public double getY(){
+        return y;
+    }
+
+    public void setY(double y){
+        this.y = y;
+    }
+
+    public double getX(){ return x; }
+
+    public void setX(double x){ this.x = x; }
+
+    public double getWidth(){
+        return width;
+    }
+
+    public double getHeight(){
+        return height;
+    }
+
+    public void moveUp(){ y+=5;}
+
+    public void moveDown(){ y-=5;}
+
+    public void moveLeft(double velx){ x -= velx; }
+
+    public void moveRight(double velx){
+        x += velx;
+    }
+
+    public boolean equals(Hitbox hitbox){
+
+        if((x<=hitbox.getX()+7 && x>=hitbox.getX()-7) && (y<=hitbox.getY()+8 && y>=hitbox.getY()-8)) {
+            return true;
+        }
+        return false;
+
+    }
+}
