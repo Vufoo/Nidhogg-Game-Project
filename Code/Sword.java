@@ -5,7 +5,7 @@ public class Sword extends GameObject{
     Hitbox hitboxS= new Hitbox(getX(), getY(), 5.7,1.5);
 
 
-    public Sword(){
+    public Sword() {
         super();
         position = 0;
         playernum = 0;
@@ -66,7 +66,7 @@ public class Sword extends GameObject{
             }
 
         }
-        hitboxS.draw();
+        //hitboxS.draw();
 
     }
 
@@ -104,3 +104,4 @@ public class Sword extends GameObject{
         return hitboxS;
     }
 }
+
