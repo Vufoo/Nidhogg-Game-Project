@@ -63,9 +63,6 @@ public class Runner {
             scorePlayer1++;
             twoPlayer(time, scorePlayer1, scorePlayer2);
 
-
-
-
         }
         if ( player2.getSword().getHitBoxS().equals(player1.getHitboxP())&&!priority){
             scorePlayer2++;
@@ -156,9 +153,7 @@ public class Runner {
             StdDraw.text(5,95, score1);
             StdDraw.setPenColor(Color.GREEN);
 
-            //StdDraw.picture(50,50,"bruh.png");
-            //StdDraw.picture(50,50,"Sunia.png"); //first screen
-            //StdDraw.filledSquare(50,50, 100);
+
 
             player1.draw();
             player1.checkCollision();
@@ -365,6 +360,5 @@ public class Runner {
         }
     }
 }
-
 
 
