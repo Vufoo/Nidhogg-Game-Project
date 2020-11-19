@@ -1,12 +1,12 @@
 import java.awt.*;
 
 public class Player extends GameObject{
-    int score;
-    double velx, vely, gravity, playernum;
-    boolean direction, hasSword;
-    Color color;
-    Sword sword;
-    Hitbox hitboxP = new Hitbox(getX(), getY(), 2, 7);
+    private int score;
+    private double velx, vely, gravity, playernum;
+    private boolean direction, hasSword;
+    private Color color;
+    private Sword sword;
+    private Hitbox hitboxP = new Hitbox(getX(), getY(), 2, 7);
 
     public Player(){
         super();
@@ -46,7 +46,7 @@ public class Player extends GameObject{
     }
 
     public void draw(){  //draws character
-        hitboxP.draw();
+        //hitboxP.draw();
         if(playernum==1){
             //StdDraw.line(x,0,x,100);
             if(hasSword){
@@ -235,5 +235,6 @@ public class Player extends GameObject{
     }
 
 }
+
 
 
