@@ -1,2 +1,2 @@
-# Nidhogg
-Nidhogg game
+# Nidhogg Game Project
+
